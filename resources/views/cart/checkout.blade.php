@@ -20,8 +20,8 @@
                     <table class="table bs-table">
                         <thead>
                             <tr>
+                                <th>รูป</th>
                                 <th></th>
-                                <th>รหัส</th>
                                 <th>ชื่อสินค้า </th>
                                 <th>จํานวน</th>
                                 <th class="bs-price">ราคา</th>
@@ -33,7 +33,8 @@
                             @foreach ($cart_items as $c)
                                 <tr>
                                     <td><img src="{{ asset($c['image_url']) }}" width="32"></td>
-                                    <td>{{ $c['code'] }}</td>
+                                    {{-- <td>{{ $c['code'] }}</td> --}}
+                                    <td></td>
                                     <td>{{ $c['name'] }}</td>
                                     <td>{{ number_format($c['qty'], 0) }}</td>
                                     <td class="bs-price">{{ number_format($c['price'], 0) }}</td>

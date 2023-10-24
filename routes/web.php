@@ -30,14 +30,15 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index']);
 
 
 Route::get('/cart/view', [App\Http\Controllers\CartController::class, 'viewCart']);
+Route::get('/cart/update/{id}/{qty}', [App\Http\Controllers\CartController::class, 'updateCart']);
 Route::get('/cart/add/{id?}', [App\Http\Controllers\CartController::class, 'addToCart']);
 Route::get('/cart/delete/{id?}', [App\Http\Controllers\CartController::class, 'deleteCart']);
 Route::get('/cart/checkout', [App\Http\Controllers\CartController::class, 'checkout']);
 Route::get('/cart/complete', [App\Http\Controllers\CartController::class, 'complete']);
 Route::get('/cart/finish', [App\Http\Controllers\CartController::class, 'finish_order']);
 
+Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-Auth::routes();
 
 Route::get('/logout',[App\Http\Controllers\LogoutController::class, 'perform' ])->name('perform');
